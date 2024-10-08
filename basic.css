@@ -1,0 +1,234 @@
+/** basic.css **/
+@import url('http://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+/** ly1 **/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+body{
+  display: flex;/* flex容器（flex container） */
+  justify-content: center;/* 定义项目在主轴上的对齐方式 */
+  align-items: center;/* 定义项目在竖直方向上对齐方式 */
+  background: #e6e7eb;
+}
+/* body::after{
+  content: '';
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#e91e63,#2196f3);
+  clip-path: circle(18% at 92% 99%);
+} */
+.container{
+  /* background-color: #030303; */
+  height: 100vh;
+  margin: 0px 30px 0px 30px;
+
+}
+
+.line{
+  width: 0;
+  height: 3px;
+  display: block;
+  background-color: #4158D0;
+  background-image: linear-gradient(90deg, #4158D0 0%, #C850C0 48%, #FFCC70 100%);
+  transition: all 0.24s ease-in-out;
+}
+textarea:focus+.line,textarea:valid+.line{
+  width: 100%;
+}
+
+/*左右搜索框样式*/
+
+.pretty-textarea-left {
+  padding: 30px 25px; /* 内边距 */
+  margin: 1.5px 0; /* 外边距 */
+  border: 0px solid #ccc; /* 边框 */
+  border-radius: 0px 0px 0px 20px; /* 边框圆角 */
+  width: 100%; /* 宽度 */
+  height: 85vh;
+  outline: none; /* 去掉点击输入框时的默认边框 */
+  box-sizing: border-box; /* 让padding不会增加元素的宽度 */
+  font-size: 36px; /* 字体大小 */
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  resize: none;
+}
+  
+.pretty-textarea-left:focus {
+  border-color: #4A90E2; /* 获取焦点时的边框颜色 */
+} 
+
+.pretty-textarea-right {
+  padding: 30px 25px; /* 内边距 */
+  margin: 1.5px 0; /* 外边距 */
+  border: 0px solid #ccc; /* 边框 */
+  border-radius: 0px 0px 20px 0px; /* 边框圆角 */
+  width: 100%; /* 宽度 */
+  height: 85vh;
+  outline: none; /* 去掉点击输入框时的默认边框 */
+  box-sizing: border-box; /* 让padding不会增加元素的宽度 */
+  font-size: 36px; /* 字体大小 */
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  background-color: #f8f8fa;
+  resize: none;
+}
+
+.pretty-textarea-right span:hover {  
+  background-color: rgb(171, 198, 255); /* 背景色变化，如果你想要文本颜色变化，请使用color属性 */  
+  color: rgb(0, 0, 0); /* 文本颜色变化 */  
+}
+  
+.pretty-textarea-right:focus {
+  border-color: #4A90E2; /* 获取焦点时的边框颜色 */
+}
+
+
+
+
+/* 按钮样式 */
+.btn_function {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  font-weight: normal;
+  color: rgb(133, 160, 247);
+  background-color: #e8eefe;
+  padding: 0.25em 1em;
+  border: none;
+  border-radius: .6rem;
+  margin:  19px 0 12px 10px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn_function span:not(:nth-child(6)) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 30px;
+  background-color: #8844FD;
+  border-radius: 50%;
+  transition: .6s ease;
+}
+
+.btn_function span:nth-child(6) {
+  position: relative;
+}
+
+.btn_function span:nth-child(1) {
+  transform: translate(-3.3em, -4em);
+}
+
+.btn_function span:nth-child(2) {
+  transform: translate(-6em, 1.3em);
+}
+
+.btn_function span:nth-child(3) {
+  transform: translate(-.2em, 1.8em);
+}
+
+.btn_function span:nth-child(4) {
+  transform: translate(3.5em, 1.4em);
+}
+.btn_function span:nth-child(5) {
+  transform: translate(3.5em, -3.8em);
+}
+
+.btn_function:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(4);
+  transition: 1.5s ease;
+}
+
+/* 清除记录按钮样式 */
+.btn_clear {
+  border: 0px solid rgb(133, 160, 247); /* 边框颜色和宽度 */
+  background-color: white;
+  color: black; /* 文字颜色 */
+  padding: 5px 10px; /* 内边距 */
+  margin: 20px 0 0 5px;
+  font-size: 16px; /* 字体大小 */
+  border-radius: 5px; /* 边框圆角 */
+  cursor: pointer; /* 鼠标悬停时显示指针形状 */
+  outline: none; /* 去掉点击按钮时浏览器默认的轮廓边框 */
+  transition: background-color 0.1s, color 0.1s; /* 平滑过渡效果 */
+}
+ 
+.btn_clear:hover {
+  background-color: rgb(194, 208, 252); /* 鼠标悬停时的背景颜色 */
+  color: rgb(103, 136, 247); /* 鼠标悬停时的文字颜色 */
+}
+
+
+
+/* 隐藏原生的select样式 */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 8px;
+  border: 1px solid #d1d1d1;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #9e9e9e;
+  font-size: 28px;
+  width: 200px;
+  text-align: center;
+}
+
+/* 美化select的下拉箭头 */
+select:after {
+  content: "\25BC"; /* Unicode编码，表示向下的箭头 */
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+/* 美化选项内容 */
+option {
+  padding: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+
+/* 侧边栏 */
+.sidebar{
+  width: 100%;
+  height: 100vh;
+  background-color: #E9ECF1;
+}
+
+/* 列表元素美化 */
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; /* 移除列表前的项目符号 */
+}
+ 
+li {
+  background-color: #f9f9f9; /* 设置背景颜色 */
+  border-bottom: 1px solid #eee; /* 添加底部边框 */
+  font-size: large;
+  padding: 10px 15px 10px 20px; 
+  margin-top: 10px;
+  border-radius: 12px;
+  transition: background-color 0.3s; /* 添加背景颜色过渡动画 */
+
+}
+
+li:hover {
+  background-color: #f0f0f0; /* 鼠标悬停时改变背景颜色 */
+}

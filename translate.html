@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="basic.css">
+        <title>尽力翻译</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="easy.js"></script>
+    </head>
+    <body>
+        <div class="container">       
+            <br/>
+            <p style="font-size:xx-large;">&nbsp;&nbsp;🌏尽力翻译（v: -1.0 中译中）</p>
+
+            <!-- 顶部功能栏 -->
+            <div>
+                <div style="width: 80vw;min-width: 1500px; max-width: 4000px;height:86px ; background-color: #fff; border-radius: 20px 20px 0 0;">
+                    <div style="margin-left: 10px;">
+                        <button  class="btn_function";>
+                            <span class="circle1"></span>
+                            <span class="circle2"></span>
+                            <span class="circle3"></span>
+                            <span class="circle4"></span>
+                            <span class="circle5"></span>
+                            <span class="text">添加术语</span>
+                        </button>
+                        <button class="btn_function">
+                            <span class="circle1"></span>
+                            <span class="circle2"></span>
+                            <span class="circle3"></span>
+                            <span class="circle4"></span>
+                            <span class="circle5"></span>
+                            <span class="text">增强翻译</span>
+                        </button>
+                        <button class="btn_function"; onclick="happy_translate()">
+                            <span class="circle1"></span>
+                            <span class="circle2"></span>
+                            <span class="circle3"></span>
+                            <span class="circle4"></span>
+                            <span class="circle5"></span>
+                            <span class="text">翻译测试</span>
+                        </button>
+                    </div>
+                    <div style="display: flex; justify-content: center; margin-top: -60px;">
+                        <select id="select1" >
+                            <option value="1">简体中文</option>
+                            <option value="2">标准中文</option>
+                            <option value="3">中文</option>
+                        </select>
+                        <button class="btn_function"; onclick="swapSelectValues()" style="margin: 0 10px 0 10px;">
+                            <span class="circle1"></span>
+                            <span class="circle2"></span>
+                            <span class="circle3"></span>
+                            <span class="circle4"></span>
+                            <span class="circle5"></span>
+                            <span class="text">⬅➡</span>
+                        </button>
+                        <select id="select2">
+                            <option value="1">简体中文</option>
+                            <option value="2">标准中文</option>
+                            <option value="3">中文</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <!-- 左侧输入框 -->
+                    <div style="flex:1">
+                        <textarea id="myTextarea" placeholder="请输入您要翻译的内容。" class="pretty-textarea-left" required></textarea>
+                        <span class="line"></span>
+                    </div>
+                    <!-- 右侧输入框 -->
+                    <div style="flex:1">
+                        <div class="pretty-textarea-right" required readonly>
+                            <span id="outputarea" onclick="copytext()" white-space: pre-wrap; style="position: relative; top: -50px; left: -220px;"></span>
+                            <p style="font-size:medium; position: relative; top: -15vh; left: 75%;">（ps:点击翻译结果可复制）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边栏 -->
+        <div class='sidebar'>
+            <div style="padding: 15px;">
+                <h3>搜索记录:</h3>
+                <ul id="history_list">
+                </ul>
+                <button id="button_clear"; class="btn_clear"; onclick="history_clear()">清除记录</button>
+            </div>
+        </div>
+
+        <script>
+            console.log("storage中有"+localStorage.length+"条记录");
+            //更新到列表
+            list_update();
+        </script>
+
+    </body>
+</html>
